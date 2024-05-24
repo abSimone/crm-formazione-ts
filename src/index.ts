@@ -3,3 +3,5 @@ function main() {
 
   corsiCard.addEventListener("click", () => window.location.assign(""));
 }
+
+main();
