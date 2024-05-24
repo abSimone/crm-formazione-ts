@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #21466d;
+  --on-primary: #fff;
+  --background-color: #4b76a0;
+  --on-background: #21466d;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--background-color);
+}
+
+article {
+  background-color: var(--primary-color);
+  padding: 12.5% 15%;
+  border-radius: 1em;
+  color: #fff;
+  font-size: 32px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
