@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "m.rossi@email.it",
+      "password": "1234",
+      "ruolo": "docente"
+    },
+    {
+      "id": 2,
+      "email": "a.bianchi@email.it",
+      "password": "abcd",
+      "ruolo": "consulente"
+    },
+    {
+      "id": 3,
+      "email": "l.verdi@email.it",
+      "password": "password123",
+      "ruolo": "staff"
+    },
+    {
+      "id": 4,
+      "email": "g.neri@email.it",
+      "password": "qwerty",
+      "ruolo": "docente"
+    },
+    {
+      "id": 5,
+      "email": "f.rossi@email.it",
+      "password": "asdfgh",
+      "ruolo": "consulente"
+    }
+  ],
+
+  "courses": [{}]
+}

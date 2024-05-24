@@ -1,0 +1,30 @@
+{
+  "name": "crm-formazione",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "webpack serve --open",
+    "db": "json-server --watch --port 8000 db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "css-loader": "^7.1.1",
+    "json-server": "^1.0.0-beta.0",
+    "source-map-support": "^0.5.21",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
