@@ -24,6 +24,11 @@ article {
   cursor: pointer;
 }
 
+#info {
+  background-color: var(--primary-color);
+  color: var(--on-primary);
+}
+
 * {
   margin: 0;
   padding: 0;
