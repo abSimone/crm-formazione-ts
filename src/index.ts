@@ -14,7 +14,7 @@ async function card() {
   let labelDynamic: string = '';
 
   data.forEach((element: any) => {
-    labelDynamic += `<label>${element.ruolo}: ${element.email}</label>`;
+    labelDynamic += `<label class="d-block p-2">${element.ruolo}: ${element.email}</label>`;
   });
 
   let card: HTMLElement = document.getElementById('card')!;
@@ -32,5 +32,9 @@ async function card() {
 
   card.innerHTML = elemementHtml;
 }
-card();
-main();
+
+if (window.location.pathname.includes('index.html')) {
+  main();
+} else if (window.location.pathname.includes('index3.html')) {
+  card();
+}
