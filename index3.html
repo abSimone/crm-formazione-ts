@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../crm-formazione-ts/src/style.css">
 </head>
 
 <body>
@@ -14,10 +15,70 @@
     </header>
     <main>
 
+        <div class="table-container">
+            <table class="table1">
+                <thead>
+                    <tr>
+                        <th>Cognome</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Età</th>
+                        <th>Sede</th>
+                        <th>Note</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rossi</td>
+                        <td>Mario</td>
+                        <td>m.rossi@email.it</td>
+                        <td>18</td>
+                        <td>Roma</td>
+                        <td><a href="#">Note formatore</a></td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">▼</button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Modifica</a></li>
+                                    <li><a class="dropdown-item" href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Ritirati</h4>
+        <div class="table-container">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Bianchi</td>
+                        <td>Sergio</td>
+                        <td>s.bianchi@email.it</td>
+                        <td>22</td>
+                        <td>Roma</td>
+                        <td><a href="#">Note formatore</a></td>
+                        <td>
+                            <button>Riammetti</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </main>
     <footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
 
 </body>
 
