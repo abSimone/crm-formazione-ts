@@ -34,3 +34,31 @@ article {
   padding: 0;
   box-sizing: border-box;
 }
+
+.table1 {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  background-color: var(--on-primary);
+}
+
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  background-color: var(--primary-color);
+  ;
+}
+
+.table-container {
+  margin-bottom: 20px;
+  width: 80%;
+}
