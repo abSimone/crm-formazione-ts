@@ -39,6 +39,7 @@ article {
   border-collapse: collapse;
   width: 100%;
   max-width: 800px;
+
   margin: 20px auto;
 }
 
@@ -61,4 +62,8 @@ th {
 .table-container {
   margin-bottom: 20px;
   width: 80%;
+}
+
+.main3 {
+  background-color: var(--on-background);
 }
