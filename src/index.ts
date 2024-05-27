@@ -40,7 +40,7 @@ if (window.location.pathname.includes('index.html')) {
 } else if (window.location.pathname.includes('index3.html')) {
   card();
 }
-}
+
 async function compilaTabella() {
   const response = await fetch(`${endopoint}courses`);
   let persone = await response.json();
