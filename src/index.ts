@@ -1,3 +1,4 @@
+import { table } from "console";
 import internal from "stream";
 
 function main() {
@@ -39,22 +40,25 @@ if (window.location.pathname.includes('index.html')) {
   main();
 } else if (window.location.pathname.includes('index3.html')) {
   card();
+  compilaTabella();
 }
 
 async function compilaTabella() {
   const response = await fetch(`${endopoint}courses`);
   let persone = await response.json();
   console.log(persone);
+  let table: HTMLElement = document.getElementById('table')!;
+  let elemementHtml: string = "";
   persone.forEach((element: any) => {
-    let table: HTMLElement = document.getElementById('table')!;
-    let elemementHtml: string = `
+
+    elemementHtml += `
     <td>Rossi</td>
-                        <td>${persone.cognome}</td>
-                        <td>${persone.nome}</td>
-                        <td>${persone.email}</td>
-                        <td>${persone.età}</td>
-                        <td>${persone.sede}</td>
-                        <td><a href="${persone.note}">Note formatore</a></td>
+                        <td>${element.cognome}</td>
+                        <td>${element.nome}</td>
+                        <td>${element.email}</td>
+                        <td>${element.età}</td>
+                        <td>${element.sede}</td>
+                        <td><a href="${element.note}">Note formatore</a></td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -67,5 +71,7 @@ async function compilaTabella() {
                         </td>
                         </tr>`
 
-  });
-} main();
+  }
+  );
+  table.innerHTML = elemementHtml;
+}
