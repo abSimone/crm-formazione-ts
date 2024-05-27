@@ -50,7 +50,7 @@
       "eta": "35",
       "sede": "Palermo",
       "note": "Note formatore",
-      "azioni": false
+      "azioni": true
     },
     {
       "id": "1eb9",
@@ -60,17 +60,17 @@
       "eta": "50",
       "sede": "Torino",
       "note": "Note formatore",
-      "azioni": false
+      "azioni": true
     },
     {
       "id": "898a",
       "nome": "Giulia",
-      "email": "g.neri@email.it",
       "cognome": "Neri",
+      "email": "g.neri@email.it",
       "eta": "45",
       "sede": "Perugia",
       "note": "Note formatore",
-      "azioni": true
+      "azioni": false
     },
     {
       "cognome": "Rossi",
