@@ -38,7 +38,7 @@
       "email": "m.rossi@email.it",
       "eta": 40,
       "sede": "Milano",
-      "note": "https://link-to-note1.com",
+      "note": "https://link-to-note1.com/",
       "azioni": false,
       "id": "24a8"
     },
@@ -65,12 +65,12 @@
     {
       "id": "898a",
       "nome": "Giulia",
-      "email": "g.neri@email.it",
       "cognome": "Neri",
+      "email": "g.neri@email.it",
       "eta": "45",
       "sede": "Perugia",
       "note": "Note formatore",
-      "azioni": true
+      "azioni": false
     },
     {
       "cognome": "Rossi",
@@ -78,7 +78,7 @@
       "email": "f.rossi@email.it",
       "eta": 30,
       "sede": "Firenze",
-      "note": "https://link-to-note5.com",
+      "note": "https://link-to-note5.com/",
       "azioni": false,
       "id": "cd3a"
     }

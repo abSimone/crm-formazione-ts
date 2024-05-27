@@ -104,26 +104,17 @@ async function compilaTabella() {
   cambiaValoreButtons.forEach(button => {
     button.addEventListener('click', async (event) => {
       const targetButton = event.target as HTMLElement;
-      const id = targetButton.dataset.id
-      const index = targetButton.getAttribute('data-index');
-      let oggetto = {
-        id: (document.getElementById('pallino')! as HTMLInputElement).value,
-        nome: document.getElementById('nome')!.innerText,
-        cognome: document.getElementById('cognome')!.innerText,
-        email: document.getElementById('email')!.innerText,
-        eta: document.getElementById('eta')!.innerText,
-        sede: document.getElementById('sede')!.innerText,
-        note: document.getElementById('note')!.innerText,
-        azioni: !!(document.getElementById('azione')! as HTMLInputElement).value,
-      };
-      console.log(id);
-      console.log(index);
-      await fetch(`${endpoint}courses/${oggetto.id}`, {
-        method: 'PUT',
-        body: JSON.stringify(oggetto)
+      const id = targetButton.dataset.id;
+
+
+
+
+      await fetch(`${endpoint}courses/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ azioni: false })
       });
       compilaTabella();
-      console.log(oggetto);
+
     });
   });
 }
