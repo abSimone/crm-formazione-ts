@@ -43,16 +43,41 @@ if (window.location.pathname.includes('index.html')) {
   compilaTabella();
 }
 
+
 async function compilaTabella() {
   const response = await fetch(`${endopoint}courses`);
   let persone = await response.json();
   console.log(persone);
   let table: HTMLElement = document.getElementById('table')!;
+  let tableRitirati: HTMLElement = document.getElementById('tableRitirati')!;
   let elemementHtml: string = "";
-  persone.forEach((element: any) => {
+  let ritiratiHtml: string = "";
 
-    elemementHtml += `
-    <td>Rossi</td>
+  persone.forEach((element: any) => {
+    if (element.azioni) {
+      elemementHtml += `
+    
+                        <td>${element.cognome}</td>
+                        <td>${element.nome}</td>
+                        <td>${element.email}</td>
+                        <td>${element.età}</td>
+                        <td>${element.sede}</td>
+                        <td><a href="${element.note}">Note formatore</a></td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">▼</button>
+                                <ul  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a id="cambiaValore" class="dropdown-item" href="#">ritira</a></li>
+                                    <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        </tr>`
+
+    }
+    else {
+      ritiratiHtml += `
                         <td>${element.cognome}</td>
                         <td>${element.nome}</td>
                         <td>${element.email}</td>
@@ -64,14 +89,20 @@ async function compilaTabella() {
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                     data-bs-toggle="dropdown" aria-expanded="false">▼</button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">ritira</a></li>
+                            
                                     <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
                                 </ul>
                             </div>
                         </td>
                         </tr>`
 
+    }
   }
+
+
+
+
   );
   table.innerHTML = elemementHtml;
+  tableRitirati.innerHTML = ritiratiHtml;
 }
