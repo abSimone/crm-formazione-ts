@@ -52,7 +52,8 @@ async function compilaTabella() {
   let elemementHtml: string = "";
   let ritiratiHtml: string = "";
 
-  persone.forEach((element: any) => {
+  persone.forEach((element: any, index: number) => {
+    const dataIndex = index; // Assegna l'indice ad una variabile esterna
     if (element.azioni) {
       elemementHtml += `
                         <td id="cognome">${element.cognome}</td>
@@ -62,18 +63,17 @@ async function compilaTabella() {
                         <td id="sede">${element.sede}</td>
                         <td><a id="note" href="${element.note}">Note formatore</a></td>
                         <input type="hidden" id="azione" value=${element.azioni} />
-                        <input type="hidden" id="id" value=${element.id} />
+                        <input type="hidden" id="pallino" value=${element.id} />
                         <td>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown" aria-expanded="false">▼</button>
+                                <button id="cambiaValore-${dataIndex}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">▼</button>
                                 <ul  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><button id="cambiaValore" class="dropdown-item" href="#">ritira</button></li>
+                                    <li><button class="dropdown-item cambiaValoreBtn" data-id="${element.id}" data-index="${dataIndex}" href="#">ritira</button></li>
                                     <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
                                 </ul>
                             </div>
                         </td>
-                        </tr>`                   
+                        </tr>`
     }
     else {
       ritiratiHtml += `
@@ -88,7 +88,6 @@ async function compilaTabella() {
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                     data-bs-toggle="dropdown" aria-expanded="false">▼</button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            
                                     <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
                                 </ul>
                             </div>
@@ -100,109 +99,22 @@ async function compilaTabella() {
   table.innerHTML = elemementHtml;
   tableRitirati.innerHTML = ritiratiHtml;
 
-  let cambiaValoreButton = document.getElementById('cambiaValore') as HTMLElement | null;
-  console.log(cambiaValoreButton);
-  
-  if (cambiaValoreButton) {
-    console.log(cambiaValoreButton);
-    cambiaValoreButton.addEventListener('click', async () => {
-      let oggetto = {
-        id: (document.getElementById('id')! as HTMLInputElement).value,
-        nome: document.getElementById('nome')!.innerText,
-        cognome: document.getElementById('cognome')!.innerText,
-        email: document.getElementById('email')!.innerText,
-        eta: document.getElementById('eta')!.innerText,
-        sede: document.getElementById('sede')!.innerText,
-        note: document.getElementById('note')!.innerText,
-        azioni: !!(document.getElementById('cognome')! as HTMLInputElement).value,
-      };
-      await fetch(`${endpoint}courses/${oggetto.id}`, {
-        method: 'PUT',
-        body: JSON.stringify(oggetto)
+  let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
+
+  cambiaValoreButtons.forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const targetButton = event.target as HTMLElement;
+      const id = targetButton.dataset.id;
+
+
+
+
+      await fetch(`${endpoint}courses/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ azioni: false })
       });
       compilaTabella();
-      console.log(oggetto);
+
     });
-  }
-
-  
+  });
 }
-// document.getElementById('cambiaValore')!.addEventListener('click', async () => {
-//   let oggetto = {
-//     id: (document.getElementById('id')! as HTMLInputElement).value,
-//     nome: document.getElementById('nome')!.innerText,
-//     cognome: document.getElementById('cognome')!.innerText,
-//     eta: document.getElementById('eta')!.innerText,
-//     note: document.getElementById('note')!.innerText,
-//     azioni: !!(document.getElementById('cognome')! as HTMLInputElement).value,
-//   };
-//   const response = await fetch(`${endpoint}courses/${oggetto.id}`, {
-//     method: 'PUT',
-//     body: JSON.stringify(oggetto)
-//   });
-//   compilaTabella();
-//   console.log(oggetto);
-  
-// });
-
-// function aggiornaTabella() {
-  //   document.getElementById('cambiaValore')!.addEventListener('click', () => {
-    //     console.log(element);
-    
-    
-    
-    //     let table: HTMLElement = document.getElementById('table')!;
-    //     let tableRitirati: HTMLElement = document.getElementById('tableRitirati')!;
-    //     let elemementHtml: string = "";
-    //     let ritiratiHtml: string = "";
-    
-    //     utenti.forEach((element: any) => {
-//       if (element.azioni) {
-//         elemementHtml += `
-    
-//                         <td>${element.cognome}</td>
-//                         <td>${element.nome}</td>
-//                         <td>${element.email}</td>
-//                         <td>${element.età}</td>
-//                         <td>${element.sede}</td>
-//                         <td><a href="${element.note}">Note formatore</a></td>
-//                         <td>
-//                             <div class="dropdown">
-//                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-//                                     data-bs-toggle="dropdown" aria-expanded="false">▼</button>
-//                                 <ul  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-//                                     <li><button id="cambiaValore" class="dropdown-item" href="#">ritira</button></li>
-//                                     <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
-//                                 </ul>
-//                             </div>
-//                         </td>
-//                         </tr>`
-//       }
-//       else {
-//         ritiratiHtml += `
-//                         <td>${element.cognome}</td>
-//                         <td>${element.nome}</td>
-//                         <td>${element.email}</td>
-//                         <td>${element.età}</td>
-//                         <td>${element.sede}</td>
-//                         <td><a href="${element.note}">Note formatore</a></td>
-//                         <td>
-//                             <div class="dropdown">
-//                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-//                                     data-bs-toggle="dropdown" aria-expanded="false">▼</button>
-//                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            
-//                                     <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
-//                                 </ul>
-//                             </div>
-//                         </td>
-//                         </tr>`
-
-//       }
-//     });
-//     table.innerHTML = elemementHtml;
-//     tableRitirati.innerHTML = ritiratiHtml;
-//   })
-// }
-
-
