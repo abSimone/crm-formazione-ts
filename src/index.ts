@@ -7,10 +7,10 @@ function main() {
   corsiCard.addEventListener("click", () => window.location.assign(""));
 }
 
-const endopoint: string = "http://localhost:8000/";
+const endpoint: string = "http://localhost:8000/";
 
 async function card() {
-  const response = await fetch(`${endopoint}users`);
+  const response = await fetch(`${endpoint}users`);
   let data = await response.json();
   console.log(data);
 
@@ -44,7 +44,7 @@ if (window.location.pathname.includes('index.html')) {
 }
 
 async function compilaTabella() {
-  const response = await fetch(`${endopoint}courses`);
+  const response = await fetch(`${endpoint}courses`);
   let persone = await response.json();
   console.log(persone);
   let table: HTMLElement = document.getElementById('table')!;
@@ -118,7 +118,7 @@ async function compilaTabella() {
       };
       console.log(id);
       console.log(index);
-      await fetch(`${endopoint}courses/${oggetto.id}`, {
+      await fetch(`${endpoint}courses/${oggetto.id}`, {
         method: 'PUT',
         body: JSON.stringify(oggetto)
       });

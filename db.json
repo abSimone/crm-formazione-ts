@@ -43,28 +43,32 @@
       "id": "24a8"
     },
     {
-      "cognome": "Bianchi",
+      "id": "6dd9",
       "nome": "Anna",
+      "cognome": "Bianchi",
       "email": "a.bianchi@email.it",
-      "eta": 35,
-      "sede": "Roma",
-      "note": "https://link-to-note2.com",
-      "azioni": false,
-      "id": "6dd9"
+      "eta": "35",
+      "sede": "Palermo",
+      "note": "Note formatore",
+      "azioni": false
     },
     {
       "id": "1eb9",
       "nome": "Luca",
       "cognome": "Verdi",
+      "email": "l.verdi@email.it",
       "eta": "50",
+      "sede": "Torino",
       "note": "Note formatore",
       "azioni": false
     },
     {
       "id": "898a",
       "nome": "Giulia",
+      "email": "g.neri@email.it",
       "cognome": "Neri",
       "eta": "45",
+      "sede": "Perugia",
       "note": "Note formatore",
       "azioni": true
     },
