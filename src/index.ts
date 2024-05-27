@@ -68,7 +68,11 @@ async function compilaTabella() {
                             <div class="dropdown">
                                 <button id="cambiaValore-${dataIndex}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">▼</button>
                                 <ul  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><button class="dropdown-item cambiaValoreBtn" data-id="${element.id}" data-index="${dataIndex}" href="#">ritira</button></li>
+                                    <li>
+                                      <button type="button" class="btn btn-primary dropdown-item cambiaValoreBtn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${element.id}" data-index="${dataIndex}" href="#">
+                                        ritira
+                                      </button>
+                                    </li>
                                     <li><a class="dropdown-item" href="#">Visualliza CV</a></li>
                                 </ul>
                             </div>
@@ -99,22 +103,22 @@ async function compilaTabella() {
   table.innerHTML = elemementHtml;
   tableRitirati.innerHTML = ritiratiHtml;
 
-  let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
+  // let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
 
-  cambiaValoreButtons.forEach(button => {
-    button.addEventListener('click', async (event) => {
-      const targetButton = event.target as HTMLElement;
-      const id = targetButton.dataset.id;
-
-
+  // cambiaValoreButtons.forEach(button => {
+  //   button.addEventListener('click', async (event) => {
+  //     const targetButton = event.target as HTMLElement;
+  //     const id = targetButton.dataset.id;
 
 
-      await fetch(`${endpoint}courses/${id}`, {
-        method: 'PATCH',
-        body: JSON.stringify({ azioni: false })
-      });
-      compilaTabella();
 
-    });
-  });
+
+  //     await fetch(`${endpoint}courses/${id}`, {
+  //       method: 'PATCH',
+  //       body: JSON.stringify({ azioni: false })
+  //     });
+  //     compilaTabella();
+
+  //   });
+  // });
 }
