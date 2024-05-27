@@ -7,10 +7,10 @@ function main() {
   corsiCard.addEventListener("click", () => window.location.assign(""));
 }
 
-const endopoint: string = "http://localhost:8000/";
+const endpoint: string = "http://localhost:8000/";
 
 async function card() {
-  const response = await fetch(`${endopoint}users`);
+  const response = await fetch(`${endpoint}users`);
   let data = await response.json();
   console.log(data);
 
@@ -44,7 +44,7 @@ if (window.location.pathname.includes('index.html')) {
 }
 
 async function compilaTabella() {
-  const response = await fetch(`${endopoint}courses`);
+  const response = await fetch(`${endpoint}courses`);
   let persone = await response.json();
   console.log(persone);
   let table: HTMLElement = document.getElementById('table')!;
@@ -110,11 +110,13 @@ async function compilaTabella() {
         id: (document.getElementById('id')! as HTMLInputElement).value,
         nome: document.getElementById('nome')!.innerText,
         cognome: document.getElementById('cognome')!.innerText,
+        email: document.getElementById('email')!.innerText,
         eta: document.getElementById('eta')!.innerText,
+        sede: document.getElementById('sede')!.innerText,
         note: document.getElementById('note')!.innerText,
         azioni: !!(document.getElementById('cognome')! as HTMLInputElement).value,
       };
-      await fetch(`${endopoint}courses/${oggetto.id}`, {
+      await fetch(`${endpoint}courses/${oggetto.id}`, {
         method: 'PUT',
         body: JSON.stringify(oggetto)
       });
@@ -123,38 +125,38 @@ async function compilaTabella() {
     });
   }
 
-  // document.getElementById('cambiaValore')!.addEventListener('click', async () => {
-  //   let oggetto = {
-  //     id: (document.getElementById('id')! as HTMLInputElement).value,
-  //     nome: document.getElementById('nome')!.innerText,
-  //     cognome: document.getElementById('cognome')!.innerText,
-  //     eta: document.getElementById('eta')!.innerText,
-  //     note: document.getElementById('note')!.innerText,
-  //     azioni: !!(document.getElementById('cognome')! as HTMLInputElement).value,
-  //   };
-  //   const response = await fetch(`${endopoint}courses/${oggetto.id}`, {
-  //     method: 'PUT',
-  //     body: JSON.stringify(oggetto)
-  //   });
-  //   compilaTabella();
-  //   console.log(oggetto);
-    
-  // });
   
 }
+// document.getElementById('cambiaValore')!.addEventListener('click', async () => {
+//   let oggetto = {
+//     id: (document.getElementById('id')! as HTMLInputElement).value,
+//     nome: document.getElementById('nome')!.innerText,
+//     cognome: document.getElementById('cognome')!.innerText,
+//     eta: document.getElementById('eta')!.innerText,
+//     note: document.getElementById('note')!.innerText,
+//     azioni: !!(document.getElementById('cognome')! as HTMLInputElement).value,
+//   };
+//   const response = await fetch(`${endpoint}courses/${oggetto.id}`, {
+//     method: 'PUT',
+//     body: JSON.stringify(oggetto)
+//   });
+//   compilaTabella();
+//   console.log(oggetto);
+  
+// });
 
 // function aggiornaTabella() {
-//   document.getElementById('cambiaValore')!.addEventListener('click', () => {
-//     console.log(element);
-
-
-
-//     let table: HTMLElement = document.getElementById('table')!;
-//     let tableRitirati: HTMLElement = document.getElementById('tableRitirati')!;
-//     let elemementHtml: string = "";
-//     let ritiratiHtml: string = "";
-
-//     utenti.forEach((element: any) => {
+  //   document.getElementById('cambiaValore')!.addEventListener('click', () => {
+    //     console.log(element);
+    
+    
+    
+    //     let table: HTMLElement = document.getElementById('table')!;
+    //     let tableRitirati: HTMLElement = document.getElementById('tableRitirati')!;
+    //     let elemementHtml: string = "";
+    //     let ritiratiHtml: string = "";
+    
+    //     utenti.forEach((element: any) => {
 //       if (element.azioni) {
 //         elemementHtml += `
     
