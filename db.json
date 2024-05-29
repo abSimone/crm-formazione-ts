@@ -1,82 +1,86 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "m.rossi@email.it",
       "password": "1234",
       "ruolo": "docente"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "a.bianchi@email.it",
       "password": "abcd",
       "ruolo": "consulente"
     },
     {
-      "id": 3,
+      "id": "3",
       "email": "l.verdi@email.it",
       "password": "password123",
       "ruolo": "staff"
     },
     {
-      "id": 4,
+      "id": "4",
       "email": "g.neri@email.it",
       "password": "qwerty",
       "ruolo": "docente"
     },
     {
-      "id": 5,
+      "id": "5",
       "email": "f.rossi@email.it",
       "password": "asdfgh",
       "ruolo": "consulente"
     }
   ],
-
   "courses": [
     {
-        "cognome": "Rossi",
-        "nome": "Mario",
-        "email": "m.rossi@email.it",
-        "età": 40,
-        "sede": "Milano",
-        "note": "https://link-to-note1.com",
-        "azioni": false
+      "cognome": "Rossi",
+      "nome": "Mario",
+      "email": "m.rossi@email.it",
+      "eta": 40,
+      "sede": "Milano",
+      "note": "https://link-to-note1.com/",
+      "azioni": false,
+      "id": "24a8"
     },
     {
-        "cognome": "Bianchi",
-        "nome": "Anna",
-        "email": "a.bianchi@email.it",
-        "età": 35,
-        "sede": "Roma",
-        "note": "https://link-to-note2.com",
-        "azioni": false
+      "id": "6dd9",
+      "nome": "Anna",
+      "cognome": "Bianchi",
+      "email": "a.bianchi@email.it",
+      "eta": "35",
+      "sede": "Palermo",
+      "note": "Note formatore",
+      "azioni": false
     },
     {
-        "cognome": "Verdi",
-        "nome": "Luca",
-        "email": "l.verdi@email.it",
-        "età": 50,
-        "sede": "Napoli",
-        "note": "https://link-to-note3.com",
-        "azioni": false
+      "id": "1eb9",
+      "nome": "Luca",
+      "cognome": "Verdi",
+      "email": "l.verdi@email.it",
+      "eta": "50",
+      "sede": "Torino",
+      "note": "Note formatore",
+      "azioni": false
     },
     {
-        "cognome": "Neri",
-        "nome": "Giulia",
-        "email": "g.neri@email.it",
-        "età": 45,
-        "sede": "Torino",
-        "note": "https://link-to-note4.com",
-        "azioni": false
+      "id": "898a",
+      "nome": "Giulia",
+      "cognome": "Neri",
+      "email": "g.neri@email.it",
+      "eta": "45",
+      "sede": "Perugia",
+      "note": "Note formatore",
+      "azioni": false
     },
     {
-        "cognome": "Rossi",
-        "nome": "Francesca",
-        "email": "f.rossi@email.it",
-        "età": 30,
-        "sede": "Firenze",
-        "note": "https://link-to-note5.com",
-        "azioni": false
+      "cognome": "Rossi",
+      "nome": "Francesca",
+      "email": "f.rossi@email.it",
+      "eta": 30,
+      "sede": "Firenze",
+      "note": "https://link-to-note5.com/",
+      "azioni": false,
+      "id": "cd3a"
     }
-]
+  ]
 }
