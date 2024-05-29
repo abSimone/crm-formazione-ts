@@ -102,18 +102,15 @@ async function compilaTabella() {
   table.innerHTML = elemementHtml;
   tableRitirati.innerHTML = ritiratiHtml;
 
-  document.getElementById('conferma')!.addEventListener('click', async () => {
 
-    let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
+  let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
 
-    cambiaValoreButtons.forEach(button => {
-      button.addEventListener('click', async (event) => {
-        const targetButton = event.target as HTMLElement;
-        const id = targetButton.dataset.id;
+  cambiaValoreButtons.forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const targetButton = event.target as HTMLElement;
+      const id = targetButton.dataset.id;
 
-
-
-
+      document.getElementById('conferma')!.addEventListener('click', async () => {
         await fetch(`${endpoint}courses/${id}`, {
           method: 'PATCH',
           body: JSON.stringify({ azioni: false })
