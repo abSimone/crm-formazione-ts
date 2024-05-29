@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRM</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="src/style.css" />
-  </head>
-  <body>
-    <main>
-      <article id="rooms">AULE</article>
-      <article id="courses">CORSI</article>
-    </main>
-    <script src="bundle.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" class="form-control">
+      <button type="submit" class="btn btn-primary mt-3">Login</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script src="bundle.js"></script>
+</body>
+
 </html>
