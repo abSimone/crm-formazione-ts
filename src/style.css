@@ -66,7 +66,7 @@ th {
 
 .main3 {
   background-color: var(--on-background);
-
+}
 * {
   box-sizing: border-box;
 }
@@ -124,3 +124,40 @@ button:hover {
   background-color: #0069d9;
 
 }
+*corsi.html style */
+
+.dio{
+    background-color:#4b76a0 ;
+    }
+    
+    .btn-top-left {
+      position: absolute;
+      top: 60px;
+      left: 70px;
+      text-decoration: underline; 
+      color: #4b76a0;
+      background-color: #21466d;
+    }
+    .link-bottom-right {
+      position: absolute;
+      top: 100px; 
+      right: 70px;
+      color: black; 
+      text-decoration: underline; 
+    }
+    .white-hr {
+      border: 1px solid white;
+      width: 90%;
+      margin: 150px auto 0;
+    }
+    
+    .dark-blue-container {
+      background-color: #21466d;
+      margin-top: 50px;
+      width:90%;
+    }
+    
+    .short-input {
+      width: 150px; 
+      border: solid #21466d;
+    }
