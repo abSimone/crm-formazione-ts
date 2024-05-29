@@ -1,5 +1,4 @@
-import { table } from "console";
-import internal from "stream";
+import { Modal } from "bootstrap";
 
 function main() {
   const corsiCard = document.getElementById("courses") as HTMLElement;
@@ -103,22 +102,29 @@ async function compilaTabella() {
   table.innerHTML = elemementHtml;
   tableRitirati.innerHTML = ritiratiHtml;
 
-  // let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
+  document.getElementById('conferma')!.addEventListener('click', async () => {
 
-  // cambiaValoreButtons.forEach(button => {
-  //   button.addEventListener('click', async (event) => {
-  //     const targetButton = event.target as HTMLElement;
-  //     const id = targetButton.dataset.id;
+    let cambiaValoreButtons = document.querySelectorAll('.cambiaValoreBtn');
+
+    cambiaValoreButtons.forEach(button => {
+      button.addEventListener('click', async (event) => {
+        const targetButton = event.target as HTMLElement;
+        const id = targetButton.dataset.id;
 
 
 
 
-  //     await fetch(`${endpoint}courses/${id}`, {
-  //       method: 'PATCH',
-  //       body: JSON.stringify({ azioni: false })
-  //     });
-  //     compilaTabella();
+        await fetch(`${endpoint}courses/${id}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ azioni: false })
+        });
+        await compilaTabella();
 
-  //   });
-  // });
+      });
+    });
+
+    // const modal = new Modal(document.getElementById('exampleModal')!);
+    // modal.hide();
+  });
+
 }
